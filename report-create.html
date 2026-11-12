@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Report an item | FindIt
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          Find
+          <span>
+            It
+          </span>
+        </a>
+        <input class="nav-toggle" id="nav-toggle" type="checkbox">
+        <label class="nav-toggle-label" for="nav-toggle">
+          Menu
+        </label>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li>
+              <a href="browse.html">
+                Browse items
+              </a>
+            </li>
+            <li>
+              <a href="my-reports.html">
+                My reports
+              </a>
+            </li>
+            <li>
+              <a href="my-matches.html">
+                My matches
+              </a>
+            </li>
+            <li>
+              <a href="my-claims.html">
+                My claims
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell">
+      <div class="container">
+        <div class="form-card card">
+          <p class="eyebrow">
+            Your report
+          </p>
+          <h1>
+            Report an item
+          </h1>
+          <p class="lead">
+            Give the campus enough detail to recognise the item, while keeping private proof for recovery.
+          </p>
+          <form action="report-create.php" method="post" enctype="multipart/form-data" class="stack">
+            <div class="form-grid">
+              <fieldset class="form-field full">
+                <legend>
+                  Report type
+                </legend>
+                <div class="radio-row">
+                  <label class="radio-option">
+                    <input type="radio" name="report_type" value="lost" required>
+                    I lost an item
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="report_type" value="found">
+                    I found an item
+                  </label>
+                </div>
+              </fieldset>
+              <div class="form-field">
+                <label for="item_name">
+                  Item name
+                </label>
+                <input id="item_name" name="item_name" type="text" maxlength="120" placeholder="e.g. Blue insulated bottle" required>
+              </div>
+              <div class="form-field">
+                <label for="category">
+                  Category
+                </label>
+                <select id="category" name="category" required>
+                  <option value="">
+                    Choose a category
+                  </option>
+                  <option>
+                    ID card
+                  </option>
+                  <option>
+                    Keys
+                  </option>
+                  <option>
+                    Bag
+                  </option>
+                  <option>
+                    Electronics
+                  </option>
+                  <option>
+                    Stationery
+                  </option>
+                  <option>
+                    Other
+                  </option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="colour">
+                  Colour
+                </label>
+                <input id="colour" name="colour" type="text" maxlength="60" placeholder="e.g. Navy blue">
+              </div>
+              <div class="form-field">
+                <label for="location">
+                  Location
+                </label>
+                <select id="location" name="location" required>
+                  <option value="">
+                    Choose a location
+                  </option>
+                  <option>
+                    Library
+                  </option>
+                  <option>
+                    Student centre
+                  </option>
+                  <option>
+                    Lecture hall
+                  </option>
+                  <option>
+                    Cafeteria
+                  </option>
+                  <option>
+                    Other campus area
+                  </option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="incident_date">
+                  Date lost/found
+                </label>
+                <input id="incident_date" name="incident_date" type="date" required>
+              </div>
+              <div class="form-field full">
+                <label for="description">
+                  Public description
+                </label>
+                <textarea id="description" name="description" maxlength="2000" placeholder="Describe visible features without sharing private proof." required>
+                </textarea>
+                <span class="form-note">
+                  Do not include passwords, PINs, or sensitive account details.
+                </span>
+              </div>
+              <div class="form-field full">
+                <label for="photo">
+                  Optional photo
+                </label>
+                <input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp">
+                <span class="form-note">
+                  Server-side upload validation will be added in PHP.
+                </span>
+              </div>
+            </div>
+            <div class="field-error" role="alert">
+              Server validation messages will appear here.
+            </div>
+            <div class="button-row">
+              <button class="button" type="submit">
+                Submit report
+              </button>
+              <a class="button ghost" href="my-reports.html">
+                Cancel
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <p>
+          <strong>
+            FindIt
+          </strong>
+          · Static frontend prototype
+        </p>
+        <p>
+          Signed-in sample view.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

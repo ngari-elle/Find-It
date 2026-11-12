@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Submit recovery request | FindIt
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          Find
+          <span>
+            It
+          </span>
+        </a>
+        <input class="nav-toggle" id="nav-toggle" type="checkbox">
+        <label class="nav-toggle-label" for="nav-toggle">
+          Menu
+        </label>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li>
+              <a href="my-matches.html">
+                My matches
+              </a>
+            </li>
+            <li>
+              <a href="my-claims.html">
+                My claims
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell">
+      <div class="container narrow">
+        <div class="form-card card">
+          <p class="eyebrow">
+            Private recovery request
+          </p>
+          <h1>
+            Claim blue insulated bottle
+          </h1>
+          <p class="lead">
+            Tell the reviewer why you believe this is your item. These details should only be visible to authorised reviewers.
+          </p>
+          <div class="alert info">
+            <strong>
+              Privacy boundary:
+            </strong>
+            Never include passwords, PINs, or account secrets. Use item-specific proof only.
+          </div>
+          <form action="claim.php" method="post" class="stack" style="margin-top:1rem">
+            <input type="hidden" name="match_id" value="sample-match-001">
+            <div class="form-field">
+              <label for="private_details">
+                Private ownership details
+              </label>
+              <textarea id="private_details" name="private_details" maxlength="2000" placeholder="Example: describe a private mark, contents, or detail not included in the public report." required>
+              </textarea>
+              <span class="form-note">
+                This field represents restricted recovery information.
+              </span>
+            </div>
+            <label class="radio-option">
+              <input type="checkbox" name="confirm_information" value="1" required>
+              I confirm these details are accurate and safe to share with the authorised reviewer.
+            </label>
+            <div class="field-error" role="alert">
+              Server validation messages will appear here.
+            </div>
+            <div class="button-row">
+              <button class="button" type="submit">
+                Submit recovery request
+              </button>
+              <a class="button ghost" href="my-matches.html">
+                Cancel
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <p>
+          <strong>
+            FindIt
+          </strong>
+          · Static frontend prototype
+        </p>
+        <p>
+          Private claim content is not shown on public pages.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

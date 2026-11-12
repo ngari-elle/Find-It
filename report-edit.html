@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Edit report | FindIt
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          Find
+          <span>
+            It
+          </span>
+        </a>
+        <input class="nav-toggle" id="nav-toggle" type="checkbox">
+        <label class="nav-toggle-label" for="nav-toggle">
+          Menu
+        </label>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li>
+              <a href="my-reports.html">
+                My reports
+              </a>
+            </li>
+            <li>
+              <a href="my-matches.html">
+                My matches
+              </a>
+            </li>
+            <li>
+              <a href="my-claims.html">
+                My claims
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell">
+      <div class="container">
+        <div class="form-card card">
+          <p class="eyebrow">
+            Editing sample report
+          </p>
+          <h1>
+            Update blue insulated bottle
+          </h1>
+          <form action="report-edit.php" method="post" enctype="multipart/form-data" class="stack">
+            <input type="hidden" name="report_id" value="sample-report-001">
+            <div class="form-grid">
+              <fieldset class="form-field full">
+                <legend>
+                  Report type
+                </legend>
+                <div class="radio-row">
+                  <label class="radio-option">
+                    <input type="radio" name="report_type" value="lost" checked>
+                    I lost an item
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="report_type" value="found">
+                    I found an item
+                  </label>
+                </div>
+              </fieldset>
+              <div class="form-field">
+                <label for="item_name">
+                  Item name
+                </label>
+                <input id="item_name" name="item_name" type="text" value="Blue insulated bottle" maxlength="120" required>
+              </div>
+              <div class="form-field">
+                <label for="category">
+                  Category
+                </label>
+                <select id="category" name="category" required>
+                  <option selected>
+                    Bottle
+                  </option>
+                  <option>
+                    ID card
+                  </option>
+                  <option>
+                    Keys
+                  </option>
+                  <option>
+                    Bag
+                  </option>
+                  <option>
+                    Electronics
+                  </option>
+                  <option>
+                    Other
+                  </option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="colour">
+                  Colour
+                </label>
+                <input id="colour" name="colour" type="text" value="Blue" maxlength="60">
+              </div>
+              <div class="form-field">
+                <label for="location">
+                  Location
+                </label>
+                <select id="location" name="location" required>
+                  <option selected>
+                    Library
+                  </option>
+                  <option>
+                    Student centre
+                  </option>
+                  <option>
+                    Lecture hall
+                  </option>
+                  <option>
+                    Cafeteria
+                  </option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="incident_date">
+                  Date lost/found
+                </label>
+                <input id="incident_date" name="incident_date" type="date" value="2026-10-12" required>
+              </div>
+              <div class="form-field full">
+                <label for="description">
+                  Public description
+                </label>
+                <textarea id="description" name="description" maxlength="2000" required>
+Matte blue insulated bottle with a plain silver lid.
+                </textarea>
+              </div>
+            </div>
+            <div class="field-error" role="alert">
+              Server validation messages will appear here.
+            </div>
+            <div class="button-row">
+              <button class="button" type="submit">
+                Save changes
+              </button>
+              <a class="button ghost" href="my-reports.html">
+                Cancel
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <p>
+          <strong>
+            FindIt
+          </strong>
+          · Static frontend prototype
+        </p>
+        <p>
+          Sample content only.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

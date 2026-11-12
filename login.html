@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Log in | FindIt
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          Find
+          <span>
+            It
+          </span>
+        </a>
+        <input class="nav-toggle" id="nav-toggle" type="checkbox">
+        <label class="nav-toggle-label" for="nav-toggle">
+          Menu
+        </label>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li>
+              <a href="browse.html">
+                Browse items
+              </a>
+            </li>
+            <li>
+              <a href="register.html">
+                Register
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell">
+      <div class="container narrow">
+        <div class="form-card card">
+          <p class="eyebrow">
+            Welcome back
+          </p>
+          <h1>
+            Log in
+          </h1>
+          <p class="lead">
+            Access your reports, matches, and recovery requests.
+          </p>
+          <form action="login.php" method="post" class="stack">
+            <div class="form-field">
+              <label for="email">
+                University email
+              </label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="password">
+                Password
+              </label>
+              <input id="password" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <div class="field-error" role="alert">
+              Server authentication messages will appear here.
+            </div>
+            <button class="button" type="submit">
+              Log in
+            </button>
+          </form>
+          <p class="small muted">
+            New to FindIt?
+            <a href="register.html">
+              Create an account
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <p>
+          <strong>
+            FindIt
+          </strong>
+          · Static frontend prototype
+        </p>
+        <p>
+          Sample content only.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

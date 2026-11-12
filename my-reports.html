@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      My reports | FindIt
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          Find
+          <span>
+            It
+          </span>
+        </a>
+        <input class="nav-toggle" id="nav-toggle" type="checkbox">
+        <label class="nav-toggle-label" for="nav-toggle">
+          Menu
+        </label>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li>
+              <a href="browse.html">
+                Browse items
+              </a>
+            </li>
+            <li>
+              <a aria-current="page" href="my-reports.html">
+                My reports
+              </a>
+            </li>
+            <li>
+              <a href="my-matches.html">
+                My matches
+              </a>
+            </li>
+            <li>
+              <a href="my-claims.html">
+                My claims
+              </a>
+            </li>
+            <li>
+              <a class="button small-button" href="report-create.html">
+                Report an item
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">
+              Signed-in sample view
+            </p>
+            <h1>
+              My reports
+            </h1>
+            <p class="lead">
+              Track reports you created and the actions available for each status.
+            </p>
+          </div>
+          <a class="button" href="report-create.html">
+            Report an item
+          </a>
+        </div>
+        <div class="alert success">
+          <strong>
+            Success message placeholder:
+          </strong>
+          Your report has been saved and is ready for matching.
+        </div>
+        <div class="grid grid-2" style="margin-top:1.5rem">
+          <article class="card report-card">
+            <span class="type-label">
+              Lost item
+            </span>
+            <h2>
+              Blue insulated bottle
+            </h2>
+            <p class="muted">
+              Main library, level 2 · 12 October 2026
+            </p>
+            <div class="meta">
+              <span class="status status-active">
+                Active
+              </span>
+              <span>
+                2 sample matches
+              </span>
+            </div>
+            <div class="card-footer">
+              <a class="button small-button" href="report-edit.html">
+                Edit report
+              </a>
+              <button class="button ghost small-button" type="button">
+                Withdraw report
+              </button>
+            </div>
+          </article>
+          <article class="card report-card">
+            <span class="type-label">
+              Found item
+            </span>
+            <h2>
+              Black canvas backpack
+            </h2>
+            <p class="muted">
+              Student centre · 10 October 2026
+            </p>
+            <div class="meta">
+              <span class="status status-review">
+                Under review
+              </span>
+            </div>
+            <div class="card-footer">
+              <span class="small muted">
+                Editing unavailable while under review
+              </span>
+              <a href="report-details.html">
+                View details
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="empty-state" style="margin-top:1.5rem">
+          <h2>
+            Empty state
+          </h2>
+          <p>
+            When this user has no reports, invite them to begin with a lost or found item.
+          </p>
+          <a class="button" href="report-create.html">
+            Create your first report
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <p>
+          <strong>
+            FindIt
+          </strong>
+          · Static frontend prototype
+        </p>
+        <p>
+          Sample content only.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+.env
+/config/local.php
+/uploads/reports/*
+!/uploads/reports/.gitkeep

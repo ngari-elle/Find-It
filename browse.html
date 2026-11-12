@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Browse reports | FindIt
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          Find
+          <span>
+            It
+          </span>
+        </a>
+        <input class="nav-toggle" id="nav-toggle" type="checkbox">
+        <label class="nav-toggle-label" for="nav-toggle">
+          Menu
+        </label>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li>
+              <a aria-current="page" href="browse.html">
+                Browse items
+              </a>
+            </li>
+            <li>
+              <a href="login.html">
+                Log in
+              </a>
+            </li>
+            <li>
+              <a class="button small-button" href="register.html">
+                Create account
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">
+              Public reports
+            </p>
+            <h1>
+              Browse items
+            </h1>
+            <p class="lead">
+              Search sample active reports. Public descriptions intentionally leave private ownership details out.
+            </p>
+          </div>
+          <a class="button" href="login.html">
+            Report an item
+          </a>
+        </div>
+        <form class="filter-bar" action="browse.php" method="get">
+          <div class="form-field search-field">
+            <label for="search">
+              Search reports
+            </label>
+            <input id="search" name="search" type="search" placeholder="Try “blue bottle”">
+          </div>
+          <div class="form-field">
+            <label for="type">
+              Type
+            </label>
+            <select id="type" name="type">
+              <option value="">
+                All types
+              </option>
+              <option value="lost">
+                Lost
+              </option>
+              <option value="found">
+                Found
+              </option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="category">
+              Category
+            </label>
+            <select id="category" name="category">
+              <option value="">
+                All categories
+              </option>
+              <option>
+                ID card
+              </option>
+              <option>
+                Keys
+              </option>
+              <option>
+                Bag
+              </option>
+              <option>
+                Electronics
+              </option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="location">
+              Location
+            </label>
+            <select id="location" name="location">
+              <option value="">
+                All locations
+              </option>
+              <option>
+                Library
+              </option>
+              <option>
+                Student centre
+              </option>
+              <option>
+                Lecture hall
+              </option>
+            </select>
+          </div>
+          <button class="button" type="submit">
+            Apply filters
+          </button>
+        </form>
+        <div class="grid grid-3">
+          <article class="card report-card">
+            <span class="type-label">
+              Lost item
+            </span>
+            <h2>
+              Blue insulated bottle
+            </h2>
+            <div class="meta">
+              <span>
+                Category: Bottle
+              </span>
+              <span>
+                12 Oct 2026
+              </span>
+            </div>
+            <p class="muted">
+              Example description: matte blue bottle with a plain silver lid, reported near the library.
+            </p>
+            <div class="card-footer">
+              <span class="status status-active">
+                Active
+              </span>
+              <a href="report-details.html">
+                View report
+              </a>
+            </div>
+          </article>
+          <article class="card report-card">
+            <span class="type-label">
+              Found item
+            </span>
+            <h2>
+              Black canvas backpack
+            </h2>
+            <div class="meta">
+              <span>
+                Category: Bag
+              </span>
+              <span>
+                10 Oct 2026
+              </span>
+            </div>
+            <p class="muted">
+              Example description: black canvas backpack found near the student centre reception.
+            </p>
+            <div class="card-footer">
+              <span class="status status-review">
+                Under review
+              </span>
+              <a href="report-details.html">
+                View report
+              </a>
+            </div>
+          </article>
+          <article class="card report-card">
+            <span class="type-label">
+              Lost item
+            </span>
+            <h2>
+              Silver key ring
+            </h2>
+            <div class="meta">
+              <span>
+                Category: Keys
+              </span>
+              <span>
+                08 Oct 2026
+              </span>
+            </div>
+            <p class="muted">
+              Example description: three keys on a small silver ring, reported near lecture hall B.
+            </p>
+            <div class="card-footer">
+              <span class="status status-active">
+                Active
+              </span>
+              <a href="report-details.html">
+                View report
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="empty-state" style="margin-top:1.5rem">
+          <h2>
+            No-results design
+          </h2>
+          <p>
+            This is the visual state to render when PHP receives filters with no matching active reports.
+          </p>
+          <a class="button ghost" href="browse.html">
+            Clear filters
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <p>
+          <strong>
+            FindIt
+          </strong>
+          · Static frontend prototype
+        </p>
+        <p>
+          Sample content only.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

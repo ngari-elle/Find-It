@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Create an account | FindIt
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          Find
+          <span>
+            It
+          </span>
+        </a>
+        <input class="nav-toggle" id="nav-toggle" type="checkbox">
+        <label class="nav-toggle-label" for="nav-toggle">
+          Menu
+        </label>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li>
+              <a href="browse.html">
+                Browse items
+              </a>
+            </li>
+            <li>
+              <a href="login.html">
+                Log in
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell">
+      <div class="container narrow">
+        <div class="form-card card">
+          <p class="eyebrow">
+            Join FindIt
+          </p>
+          <h1>
+            Create an account
+          </h1>
+          <p class="lead">
+            Register as a student or staff member to report items and manage recovery requests.
+          </p>
+          <div class="alert info">
+            <strong>
+              Prototype note:
+            </strong>
+            This form is ready for a future server-side registration handler.
+          </div>
+          <form action="register.php" method="post" class="stack">
+            <div class="form-field">
+              <label for="full_name">
+                Full name
+              </label>
+              <input id="full_name" name="full_name" type="text" maxlength="120" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="email">
+                University email
+              </label>
+              <input id="email" name="email" type="email" maxlength="190" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="password">
+                Password
+              </label>
+              <input id="password" name="password" type="password" minlength="8" autocomplete="new-password" required>
+              <span class="form-note">
+                Use at least 8 characters. The server will hash this value.
+              </span>
+            </div>
+            <div class="form-field">
+              <label for="password_confirmation">
+                Confirm password
+              </label>
+              <input id="password_confirmation" name="password_confirmation" type="password" minlength="8" autocomplete="new-password" required>
+            </div>
+            <div class="field-error" role="alert">
+              Server validation messages will appear here.
+            </div>
+            <button class="button" type="submit">
+              Create account
+            </button>
+          </form>
+          <p class="small muted">
+            Already registered?
+            <a href="login.html">
+              Log in
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <p>
+          <strong>
+            FindIt
+          </strong>
+          · Static frontend prototype
+        </p>
+        <p>
+          Sample content only.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

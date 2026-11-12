@@ -1,0 +1,11 @@
+<?php
+require_once __DIR__ . '/includes/bootstrap.php'; require_login();
+$matchId = filter_input(INPUT_GET, 'match_id', FILTER_VALIDATE_INT) ?: filter_input(INPUT_POST, 'match_id', FILTER_VALIDATE_INT);
+$stmt = database()->prepare("SELECT m.id, m.score, l.item_name AS lost_name, f.item_name AS found_name, l.user_id AS lost_owner, f.user_id AS found_owner FROM match_suggestions m JOIN item_reports l ON l.id = m.lost_report_id JOIN item_reports f ON f.id = m.found_report_id WHERE m.id = ? AND m.status = 'suggested'");
+$stmt->execute([$matchId ?: 0]); $match = $stmt->fetch(); if (!$match || ((int) $match['lost_owner'] !== (int) current_user()['id'] && (int) $match['found_owner'] !== (int) current_user()['id'])) { http_response_code(404); exit('Match not found.'); }
+$error = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { verify_csrf(); $details = post_string('private_details', 2000); if ($details === '') $error = 'Provide private details that help verify ownership.'; else { $insert = database()->prepare('INSERT INTO recovery_requests (match_id, claimant_id, private_details) VALUES (?, ?, ?)'); $insert->execute([$match['id'], current_user()['id'], $details]); flash('success', 'Recovery request submitted for review.'); redirect('my-claims.php'); } }
+$pageTitle = 'Submit recovery request'; require __DIR__ . '/includes/header.php';
+?>
+<main class="page-shell"><div class="container"><div class="form-card card"><p class="eyebrow">Private request</p><h1>Submit a recovery request</h1><p class="lead">Possible match: <?= e($match['lost_name']) ?> ↔ <?= e($match['found_name']) ?> (<?= (int) $match['score'] ?>%).</p><?php if ($error): ?><div class="alert error"><?= e($error) ?></div><?php endif; ?><form method="post" class="stack"><input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>"><input type="hidden" name="match_id" value="<?= (int) $match['id'] ?>"><div class="form-field"><label for="private_details">Private verification details</label><textarea id="private_details" name="private_details" maxlength="2000" required placeholder="Describe a private mark, contents, or detail not in the public report."></textarea></div><button class="button" type="submit">Submit request</button></form></div></div></main>
+<?php require __DIR__ . '/includes/footer.php'; ?>
